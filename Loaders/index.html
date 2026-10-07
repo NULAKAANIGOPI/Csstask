@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loader Showcase</title>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:red;
+}
+.container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px; 
+}
+
+.card{
+    min-width:200px;
+    height:330px;
+    background:beige;
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:.3s;
+    color:red;
+}
+.card:hover{
+    box-shadow:0 10px 25px gold;
+}
+.card h2{
+    margin-bottom:50px;
+}
+.msg{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.dot{
+    width:120px;
+    height:80px;
+    background:#fff;
+    border-radius:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    position:relative;
+}
+.dot span{
+    width:12px;
+    height:12px;
+    background:#ff6b6b;
+    border-radius:50%;
+    animation:dot1 2s infinite;
+}
+.dot span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.dot span:nth-child(3){
+    animation-delay:.4s;
+}
+@keyframes dot1{
+    0%,100%{
+        transform:translatey(0);
+       
+    }
+    50%{
+        transform: translatey(-10px);
+      
+    }
+}
+.code{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    font-size:80px;
+    font-weight:bold;
+}
+.code span{
+    animation : rotate 2s linear infinite;
+}
+.code span:nth-child(2){
+    animation-delay:.4s;
+}
+@keyframes rotate{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.8);
+    }
+}
+.music{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.music span{
+    width:10px;
+    border-radius: 25px;
+    background:cyan;
+    animation:music 1s infinite;
+}
+
+.music span:nth-child(1){
+    height:45px;
+    background:red;
+}
+
+.music span:nth-child(2){
+    height:65px;
+    background:blue;
+    animation-delay:.2s;
+}
+
+.music span:nth-child(3){
+    height:35px;
+    background:green;
+    animation-delay:.4s;
+}
+
+.music span:nth-child(4){
+    height:60px;
+    background:orangered;
+    animation-delay:.6s;
+}
+
+.music span:nth-child(5){
+    height:30px;
+    background:purple;
+    animation-delay:.8s;
+}
+@keyframes music{
+    0%,100%{
+        transform:scaleY(.5);
+    }
+    50%{
+        transform:scaleY(2);
+    }
+}
+.dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 40px;;
+    gap:15px;
+}
+.dots span{
+    width:18px;
+    height:18px;
+    background:#ff4d6d;
+    border-radius:50%;
+    animation:size .8s infinite alternate;
+}
+.dots span:nth-child(2){
+    animation-delay:.2s;
+}
+.dots span:nth-child(3){
+    animation-delay:.4s;
+}
+@keyframes size{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+.ben{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.circle{
+    /* background:conic-gradient(from 90deg, blue,aqua,orange,red); */
+     background:conic-gradient(
+        green 0deg 90deg,
+        gold 90deg 180deg,
+        green 180deg 270deg,
+        gold 270deg 360deg );
+    width:90px;
+    height:90px;
+    border:10px solid blue;
+    border-top:10px solid #fff;
+    border-bottom:10px solid #fff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+ .load{
+    color:black;
+    font-size:45px;
+    font-weight:bold;
+}
+ .load span{
+    opacity:0;
+    animation:loading 3s linear infinite;
+}
+.load span:nth-child(2){
+    animation-delay:.2s;
+}
+.load span:nth-child(3){
+    animation-delay:.4s;
+}
+.load span:nth-child(4){
+    animation-delay:.6s;
+}
+.load span:nth-child(5){
+    animation-delay:.8s;
+}
+.load span:nth-child(6){
+    animation-delay: 1s;
+}
+.load span:nth-child(7){
+    animation-delay: 1.2s;
+}
+.load span:nth-child(8){
+    animation-delay:1.4s;
+}
+.load span:nth-child(9){
+    animation-delay: 1.6s;
+}
+@keyframes loading{
+ 0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.2;
+    }
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+} 
+
+</style>
+</head>
+
+<body>
+<h1>Loader Collection</h1>
+<div class="container">
+    <div class="card">
+        <h2>Message Loader</h2>
+        <div class="msg">
+            <div class="dot">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Code Loader</h2>
+        <div class="code">
+            <span>{</span>
+            <span>}</span>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Music Loader</h2>
+        <div class="music">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="card">
+        <h2>3 Dots Loader</h2>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Ben 10 Loader</h2>
+        <div class="ben">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Hacker Loader</h2>
+        <div class="load">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
